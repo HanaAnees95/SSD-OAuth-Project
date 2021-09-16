@@ -1,0 +1,29 @@
+{
+  "name": "ssd-oauth-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aqeel-Zeid/SSD-OAuth-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aqeel-Zeid/SSD-OAuth-Project/issues"
+  },
+  "homepage": "https://github.com/Aqeel-Zeid/SSD-OAuth-Project#readme",
+  "devDependencies": {
+    "nodeman": "^1.1.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "passport": "^0.4.1",
+    "passport-google-oauth2": "^0.2.0"
+  }
+}
