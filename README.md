@@ -21,6 +21,10 @@ http://localhost:4000
 ## Deployed Link
 
 
+## References 
+
+https://www.youtube.com/watch?v=BZwzWgLA0JA - (O)Auth Passport.js
+
 
 ## Authors
 
