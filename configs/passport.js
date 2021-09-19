@@ -24,7 +24,7 @@ passport.deserializeUser((sessionUser, done) => {
 })
 
 
-assport.use(
+passport.use(
     
     new GoogleStrategy(
         // google  authkeys
