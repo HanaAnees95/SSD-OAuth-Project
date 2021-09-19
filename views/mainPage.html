@@ -26,10 +26,8 @@
             <div class="row">
                 <div class="col s12">
                     <ul class="collection">
-                        <li class="collection-item avatar">
-                            <img src="{{avatar}}" alt="avatar" class="circle">
-                            <span class="title">{{name}}</span>
-                            <p>googleid - (user id)</p>
+                        <li class="collection-item avatar">                            
+                            <span class="title">{{name}}</span>                            
                             <p>email - {{email}}</p>
                         </li>
                     </ul>
@@ -65,6 +63,28 @@
                 </div>
             </div>
         </div>
+        
+        <h5 class="header center orange-text">Primary Calendar</h5>
+        <div class="row center">
+            <h7 class="header col s12 light">Next 10 events in the calendar</h7>
+            </div>
+
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <ul class="collection">
+                {% for item in events %}
+                <li class="collection-item">
+                <p>{{ item.start.date }}<strong> - {{ item.summary }}</strong></p>
+                <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+                </li>
+                <!-- <p>{{ item.start.date }}</p><span>{{ item.summary }}</span> -->
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+
+
+
     </main>
 
 

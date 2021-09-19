@@ -7,7 +7,7 @@ const AUTHKEYS = require('../configs/AuthKeys')
 const router = Router()
 
 router.get('/', function (req, res) {
-    res.render('homePage.html', { 'title': 'Application Home' })
+    res.render('homePage.html', { 'title': 'OAtuh 2.0 Application Home Page' })
 })
 
 router.get('/mainPage', function (req, res) {
@@ -17,7 +17,7 @@ router.get('/mainPage', function (req, res) {
     else {
 
         let parseData = {
-            title: 'DASHBOARD',
+            title: 'HOME PAGE',
             googleid: req.user._id,
             name: req.user.name,
             avatar: req.user.pic_url,

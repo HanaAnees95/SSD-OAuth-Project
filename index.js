@@ -1,6 +1,6 @@
 const express = require('express')
-const homeRouter = require('./routes/homePage')
-const authRouter = require('./routes/mainPage')
+const homePage = require('./routes/homePage')
+const mainPage = require('./routes/mainPage')
 const passportConfig = require('./configs/passport')
 const passport = require('passport')
 const cookieSession = require('cookie-session')
@@ -22,7 +22,7 @@ nunjucks.configure('views', {
 
 app.use('/static', express.static('public'))
 
-
+var path = __dirname + '/views/'; 
 
 app.use(cookieSession({
     keys: [AUTHKEYS.session_key]
@@ -36,5 +36,5 @@ app.use(passport.session())
 app.use(fileUpload());
 
 
-app.use('', homeRouter) 
-app.use('/auth', authRouter) 
+app.use('', homePage) 
+app.use('/auth', mainPage) 
