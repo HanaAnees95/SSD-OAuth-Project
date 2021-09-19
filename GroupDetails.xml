@@ -1,0 +1,28 @@
+<groupdetails>
+    <memberone>
+        <regnumber>IT18050318</regnumber>
+        <name>Aqeel Zeid</name>
+        <email>it18050318@my.sliit.lk</email>
+    </memberone>
+    <membertwo>
+        <regnumber>IT18200034</regnumber>
+        <name>Hasna Anees</name>
+        <email>it18200034@my.sliit.lk</email>
+    </membertwo>
+    <memberthree>
+        <regnumber>IT18001594</regnumber>
+        <name>Adheeb Shafik</name>
+        <email>it18001594@my.sliit.lk</email>
+    </memberthree>
+    <memberfour>
+        <regnumber>IT18060690</regnumber>
+        <name>Mohamed Rifan</name>
+        <email>it18060690@my.sliit.lk</email>
+    </memberfour>
+
+
+    <githublink>
+        <url></url>
+    </githublink>
+    
+</groupdetails>
