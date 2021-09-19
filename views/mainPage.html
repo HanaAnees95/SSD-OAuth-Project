@@ -16,7 +16,7 @@
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right">
                 <li>{{name}}</li>
-                <li><a href="/auth/logout">logout</a></li>
+                <li><a href="/auth/logout">LogOut</a></li>
             </ul>
         </div>
     </nav>
@@ -27,61 +27,55 @@
                 <div class="col s12">
                     <ul class="collection">
                         <li class="collection-item avatar">                            
-                            <span class="title">{{name}}</span>                            
-                            <p>email - {{email}}</p>
+                            <span class="title">Author's Name - {{name}}</span>                            
+                            <p>Author's Email - {{email}}</p>
                         </li>
                     </ul>
                 </div>
-                <div class="col s12 m4 center">
+            </div>
+        </div>
 
-                    <div>
-                        {% if (file == "uploaded") %}
-                        <div class="light-blue lighten-1" style="padding: 2px 10px">
-                            <p>File successfully uploaded</p>
-                        </div>
-                        {% elif (file == "notuploaded") %}
-                        <div class="light-blue lighten-1" style="padding: 2px 10px">
-                            <p>File failed to upload please try again</p>
-                        </div>
-                        {% endif %}
-                    </div>
-
-
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>File</span>
-                                <input type="file" required name="file_upload">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                        </div>
-                        <button style="display: block; margin: 0 auto" class="btn waves-effect waves-light"
-                            type="submit">UPLOAD</button>
-                    </form>
+        <div class="col s12 m4 center">
+            <div>
+                {% if (file == "uploaded") %}
+                <div class="light-green lighten-1" style="padding: 2px 10px">
+                    <p>Your File is Successfully Uploaded to You Google Drive ....!</p>
                 </div>
-            </div>
-        </div>
-        
-        <h5 class="header center orange-text">Primary Calendar</h5>
-        <div class="row center">
-            <h7 class="header col s12 light">Next 10 events in the calendar</h7>
+                {% elif (file == "notuploaded") %}
+                <div class="light-blue lighten-1" style="padding: 2px 10px">
+                    <p>Your File is Failed to Upload to Your Google Drive ....!</p>
+                </div>
+                {% endif %}
             </div>
 
-        <div class="row">
-            <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <ul class="collection">
-                {% for item in events %}
-                <li class="collection-item">
-                <p>{{ item.start.date }}<strong> - {{ item.summary }}</strong></p>
-                <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
-                </li>
-                <!-- <p>{{ item.start.date }}</p><span>{{ item.summary }}</span> -->
-                {% endfor %}
-            </ul>
-            </div>
+
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Choose Files from your PC</span>
+                        <input type="file" required name="file_upload">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <button style="display: block; margin: 0 auto" class="btn waves-effect light-blue"
+                    type="submit">UPLOAD TO DRIVE</button>
+            </form>
         </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+            
+     
+        
+        
 
 
 
