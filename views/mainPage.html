@@ -2,222 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
-    <title>{{title}}</title>
-    <link href="/static/materializ.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+  <title>{{title}}</title>
+  <link href="/static/materializ.css" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
-    <nav style="background:#65a898">
-        <div class="nav-wrapper">
-            <ul id="nav" class="right">
-                <li>{{name}}</li>
-                <li><a href="/auth/logout">LogOut</a></li>
-            </ul>
-        </div>
-    </nav>
-    <br>
+  <nav style="background:#65a898">
+    <div class="nav-wrapper">
+      <ul id="nav" class="right">
+        <b>
+          <li>{{name}}</li>
+        </b>
+        <li><a href="/auth/logout">Signout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <br>
 
-    <main>                
-        <div class="card text-center" style="width: 40em;margin:0 auto;">
-            <div class="card-header">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col s12">
-                            <ul class="collection">
-                                <li class="collection-item avatar">                            
-                                    <span class="title">Author's Name - {{name}}</span>                            
-                                    <p>Author's Email - {{email}}</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+  <main>
+    <div class="card text-center" style="width: 40em;margin:0 auto;">
+      <div class="card-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12">
+              <ul class="collection">
+                <li class="collection-item avatar">
+                  <b><span class="title">Author's Name - {{name}}</span></b>
+                  <b>
+                    <p>Author's Email - {{email}}</p>
+                  </b>
+                </li>
+              </ul>
             </div>
-        </div>        
-        <br>  
-        <div class="card text-center" style="width: 60em;margin:0 auto;">
-            <div class="card-header">
-              <h4 class="header center"  style="color :#65a898; font-size: 20px;">Upload Your Files Here</h4>
-            </div>
-            <div class="card-body">
-                <div class="col s12 m4 center">
-                    <div>
-                        {% if (file == "uploaded") %}
-                        <div class="light-green lighten-1" style="padding: 2px 10px">
-                            <p>Your File is Successfully Uploaded to You Google Drive ....!</p>
-                        </div>
-                        {% elif (file == "notuploaded") %}
-                        <div class="light-blue lighten-1" style="padding: 2px 10px">
-                            <p>Your File is Failed to Upload to Your Google Drive ....!</p>
-                        </div>
-                        {% endif %}
-                    </div>
-        
-        
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Choose Files from Your PC</span>
-                                <input type="file" required name="file_upload">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                        </div>
-                        <button style="display: block; margin: 0 auto" class="btn waves-effect light-blue"
-                            type="submit">UPLOAD TO DRIVE</button>
-                    </form>
-                </div> 
-             
-            </div>
-            <div class="card-footer text-muted">
-              <p class="header center orange-text"  style="font-size: 20px;">You can view uploaded items in your Google Drive</p>                
-            </div>
-          </div>
-
-        
-        </body>  
-        <br>
-        <div class="card text-center" style="width: 80em;margin:0 auto;">
-          <div class="card-header">
-            <h4 class="header center"  style="color :#65a898; font-size: 20px;">Create Your Calender Events Here</h4>
-            <span id="msg">
-              <h2 style="text-decoration-color: lightblue;"> Calender Event is Successfully Added......!!! </h2>
-            </span>
-            <span id="msg_error">
-              <h2 style="text-decoration-color:lightblue;"> Calender Event is not Added......!!! Something Went Wrong !!! </h2>
-            </span>
-            <span id="url_id"> </span>
-          </div>
-          <div class="card-body"  style="text-align: center;" >
-              <div class="center">
-                <form id="main_form" style="align-content: center;">
-                  <div class="form-group">        
-                  </div>
-        
-                  <div class="form-group">
-                    <div class="col-md-10" style="text-align: left;">
-                      <b><label style="text-align: left; font-size: medium; color: black;">Event Title</label></b>
-                      <input type="text" class="form-control" name="summary" id="summary" placeholder="Add the title of your event" required />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-md-10" style="text-align: left;">
-                      <b><label style="text-align: left; font-size: medium; color: black;">Event Description</label></b>
-                      <input type="text" class="form-control" name="description" id="description" placeholder="Add the description of your event" required></input>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-md-10" style="text-align: left;">
-                      <b><label style="text-align: left; font-size: medium; color: black;">Event Location</label></b>
-                      <input type="text" class="form-control" name="location" id="location" placeholder="Add the location of your event" required />
-                    </div>
-                  </div>
-        
-                  <div class="form-group">
-                    <div class="col-md-10" style="text-align: left;">
-                      <b><label style="text-align: left; font-size: medium; color: black;">Event Start Date and Time</label></b>
-                      <input type="datetime-local" id="start" name="start" class="form-control input-datetimepicker"
-                        data-date-format="yyy-mm-ddThh:ii" required>
-                    </div>
-                    <div class="col-md-10" style="text-align: left;">
-                      <b><label style="text-align: left; font-size: medium; color: black;">Event End Date and Time</label></b>
-                      <input type="datetime-local" id="end" name="end" class="form-control input-datetimepicker"
-                        data-date-format="yyy-mm-ddThh:ii" required>
-                    </div>
-                  </div>
-        
-                  <div class="center-align">
-                    <button type="button" id="eventSubmit" style="display: block; margin: 0 auto" class="btn waves-effect light-blue"> ADD EVENT TO CALENDER
-                    </button>        
-                  </div>
-                </form>
-              </div> 
-           
-          </div>          
-          <div class="card-footer text-muted">
-            <p class="header center orange-text"  style="font-size: 20px;">You can view your Events in Google Calender</p>
           </div>
         </div>
       </div>
-       
-        
-                
-        
-              
-        
-            
-        
-      </body>      
-    </main>
+    </div>
+    <br>
+    <div class="card text-center" style="width: 60em;margin:0 auto;">
+      <div class="card-header">
+        <h4 class="header center" style="color :#65a898; font-size: 20px;">Upload Your Files Here</h4>
+      </div>
+      <div class="card-body">
+        <div class="col s12 m4 center">
+          <div>
+            {% if (file == "uploaded") %}
+            <div class="light-green lighten-1" style="padding: 2px 10px">
+              <p>Your File is Successfully Uploaded to You Google Drive ....!</p>
+            </div>
+            {% elif (file == "notuploaded") %}
+            <div class="light-blue lighten-1" style="padding: 2px 10px">
+              <p>Your File is Failed to Upload to Your Google Drive ....!</p>
+            </div>
+            {% endif %}
+          </div>
+
+
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Choose Files from Your PC</span>
+                <input type="file" required name="file_upload">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button style="display: block; margin: 0 auto" class="btn waves-effect light-blue" type="submit">UPLOAD TO
+              DRIVE</button>
+          </form>
+        </div>
+
+      </div>
+      <div class="card-footer text-muted">
+        <p class="header center orange-text" style="font-size: 20px;">You can view uploaded items in your Google Drive
+        </p>
+      </div>
+    </div>
+
+
 </body>
+<br>
+<div class="card text-center" style="width: 80em;margin:0 auto;">
+  <div class="card-header">
+    <h4 class="header center" style="color :#65a898; font-size: 20px;">Create Your Calender Events Here</h4>
+    <span id="msg">
+      <h2 style="text-decoration-color: lightblue;"> Calender Event is Successfully Added......!!! </h2>
+    </span>
+    <span id="msg_error">
+      <h2 style="text-decoration-color:lightblue;"> Calender Event is not Added......!!! Something Went Wrong !!! </h2>
+    </span>
+    <span id="url_id"> </span>
+  </div>
+  <div class="card-body" style="text-align: center;">
+    <div class="center">
+      <form id="main_form" style="align-content: center;">
+        <div class="form-group">
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-10" style="text-align: left;">
+            <b><label style="text-align: left; font-size: medium; color: black;">Event Title</label></b>
+            <input type="text" class="form-control" name="summary" id="summary"
+              placeholder="Add the title of your event" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-10" style="text-align: left;">
+            <b><label style="text-align: left; font-size: medium; color: black;">Event Description</label></b>
+            <input type="text" class="form-control" name="description" id="description"
+              placeholder="Add the description of your event" required></input>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-10" style="text-align: left;">
+            <b><label style="text-align: left; font-size: medium; color: black;">Event Location</label></b>
+            <input type="text" class="form-control" name="location" id="location"
+              placeholder="Add the location of your event" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-10" style="text-align: left;">
+            <b><label style="text-align: left; font-size: medium; color: black;">Event Start Date and Time</label></b>
+            <input type="datetime-local" id="start" name="start" class="form-control input-datetimepicker"
+              data-date-format="yyy-mm-ddThh:ii" required>
+          </div>
+          <div class="col-md-10" style="text-align: left;">
+            <b><label style="text-align: left; font-size: medium; color: black;">Event End Date and Time</label></b>
+            <input type="datetime-local" id="end" name="end" class="form-control input-datetimepicker"
+              data-date-format="yyy-mm-ddThh:ii" required>
+          </div>
+        </div>
+
+        <div class="center-align">
+          <button type="button" id="eventSubmit" style="display: block; margin: 0 auto"
+            class="btn waves-effect light-blue"> ADD EVENT TO CALENDER
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="card-footer text-muted">
+    <p class="header center orange-text" style="font-size: 20px;">You can view your Events in Google Calender</p>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</main>
+</body>
+
 </html>
 
 <script type="text/javascript">
+  $('#msg').hide();
+  $('#msg_error').hide();
 
-    $('#msg').hide();
-    $('#msg_error').hide();
-  
-    $('#eventSubmit').on('click', function (e) {
-      e.preventDefault();
-  
-      var summary = $('#summary').val();
-      var description = $('#description').val();
-      var location = $('#location').val();
-      var start = $('#start').val();
-      var end = $('#end').val();
-  
-      if (summary == "" || summary == null || description == "" || description == null || location == "" || location == null || start == null || start == "" || end == "" || end == null) {
-        iziToast.warning({
-          title: 'Warning',
-          message: "Please fill all the fields...!",
-          position: 'center',
-        });
-      } else {
-        $.ajax({
-          url: '/addEvent',
-          method: 'POST',
-          data: {
-            summary: summary,
-            description: description,
-            location: location,
-            start: start,
-            end: end
-          },
-          headers: {
-            Authorization: $`Bearer ${localStorage.getItem("access_token")}`
-          },
-          error: function (r) { },
-          success: function (r) {
-            if (r.result) {
-              $('#msg').show();
-              $('#main_form').hide();
-              $("#url_id").html("<a href='" + r.url + "'> Click here to view in google Calender </a>");
-  
-            } else {
-              $('#msg_error').show();
-              $('#main_form').hide();
-  
-            }
+  $('#eventSubmit').on('click', function (e) {
+    e.preventDefault();
+
+    var summary = $('#summary').val();
+    var description = $('#description').val();
+    var location = $('#location').val();
+    var start = $('#start').val();
+    var end = $('#end').val();
+
+    if (summary == "" || summary == null || description == "" || description == null || location == "" ||
+      location == null || start == null || start == "" || end == "" || end == null) {
+      iziToast.warning({
+        title: 'Warning',
+        message: "File All the Fields to Create Your Event...!",
+        position: 'center',
+      });
+    } else {
+      $.ajax({
+        url: '/addEvent',
+        method: 'POST',
+        data: {
+          summary: summary,
+          description: description,
+          location: location,
+          start: start,
+          end: end
+        },
+        headers: {
+          Authorization: $ `Bearer ${localStorage.getItem("access_token")}`
+        },
+        error: function (r) {},
+        success: function (r) {
+          if (r.result) {
+            $('#msg').show();
+            $('#main_form').hide();
+            $("#url_id").html("<a href='" + r.url +
+            "'> You Can View Your Events by Clicking Here......!</a>");
+
+          } else {
+            $('#msg_error').show();
+            $('#main_form').hide();
+
           }
-        });
-  
-      }
-  
-    });
-  </script>
+        }
+      });
+
+    }
+
+  });
+</script>
