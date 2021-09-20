@@ -92,118 +92,80 @@
 
         
         </body>  
-        
-        <div class="card text-center" style="width: 60em;margin:0 auto;">
+        <br>
+        <div class="card text-center" style="width: 80em;margin:0 auto;">
           <div class="card-header">
             <h4 class="header center"  style="color :#65a898; font-size: 20px;">Create Your Calender Events Here</h4>
+            <span id="msg">
+              <h2 style="text-decoration-color: lightblue;"> Calender Event is Successfully Added......!!! </h2>
+            </span>
+            <span id="msg_error">
+              <h2 style="text-decoration-color:lightblue;"> Calender Event is not Added......!!! Something Went Wrong !!! </h2>
+            </span>
+            <span id="url_id"> </span>
           </div>
-          <div class="card-body">
-              <div class="col s12 m4 center">
-                  <div>
-                      {% if (file == "uploaded") %}
-                      <div class="light-green lighten-1" style="padding: 2px 10px">
-                          <p>Your File is Successfully Uploaded to You Google Drive ....!</p>
-                      </div>
-                      {% elif (file == "notuploaded") %}
-                      <div class="light-blue lighten-1" style="padding: 2px 10px">
-                          <p>Your File is Failed to Upload to Your Google Drive ....!</p>
-                      </div>
-                      {% endif %}
-                  </div>
-      
-      
-                  <form action="/upload" method="post" enctype="multipart/form-data">
-                      <div class="file-field input-field">
-                          <div class="btn">
-                              <span>Choose Files from Your PC</span>
-                              <input type="file" required name="file_upload">
-                          </div>
-                          <div class="file-path-wrapper">
-                              <input class="file-path validate" type="text">
-                          </div>
-                      </div>
-                      <button style="display: block; margin: 0 auto" class="btn waves-effect light-blue"
-                          type="submit">UPLOAD TO DRIVE</button>
-                  </form>
-              </div> 
-           
-          </div>
-          <div class="card-footer text-muted">
-              You can view uploaded items in your Google Drive
-          </div>
-        </div>
-
-        <body style="margin-top: 0px;">
-            <div class="grey lighten-3 container">
-              <div class="col s6 m7 center  grey lighten-3">
-                <h2 class="header" style="height: 80px;">Create Your Calender Events Here</h2>
-                <span id="msg">
-                  <h4 style="text-decoration-color: rgb(172, 8, 41);"> Calender Event is Successfully Added......!!! </h4>
-                </span>
-                <span id="msg_error">
-                  <h4 style="text-decoration-color: rgb(172, 8, 41);"> Calender Event is not Added......!!! Something Went Wrong !!! </h4>
-                </span>
-                <span id="url_id"> </span>
-        
-                <form id="main_form"
-                  style="width: 30opx; align-content: center; margin-right:150px;margin-left:150px; margin-top: 20px;padding-top: 10px">
-                  <div class="form-group">
-        
+          <div class="card-body"  style="text-align: center;" >
+              <div class="center">
+                <form id="main_form" style="align-content: center;">
+                  <div class="form-group">        
                   </div>
         
                   <div class="form-group">
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" name="summary" id="summary" placeholder="summary" required />
+                    <div class="col-md-10">
+                      <label style="text-align: left; font-size: medium; color: black;">Event Title</label>
+                      <input type="text" class="form-control" name="summary" id="summary" placeholder="Add the title of your event" required />
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-md-4">
-                      <textarea class="form-control" name="description" id="description" placeholder="Description" rows="10"
-                        cols="20" required></textarea>
+                    <div class="col-md-10">
+                      <label>Event Description</label>
+                      <input type="text" class="form-control" name="description" id="description" placeholder="Add the description of your event" required></input>
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" name="location" id="location" placeholder="Location" required />
+                    <div class="col-md-10">
+                      <label>Event Location</label>
+                      <input type="text" class="form-control" name="location" id="location" placeholder="Add the location of your event" required />
                     </div>
                   </div>
         
                   <div class="form-group">
-                    <div class="col-md-2">
-                      <div class="help-block">Start</div>
+                    <div class="col-md-10">
+                      <label>Event Start Date and Time</label>
                       <input type="datetime-local" id="start" name="start" class="form-control input-datetimepicker"
                         data-date-format="yyy-mm-ddThh:ii" required>
                     </div>
-                    <div class="col-md-2">
-                      <div class="help-block">End </div>
+                    <div class="col-md-10">
+                      <label>Event End Date and Time</label>
                       <input type="datetime-local" id="end" name="end" class="form-control input-datetimepicker"
                         data-date-format="yyy-mm-ddThh:ii" required>
                     </div>
                   </div>
         
                   <div class="center-align">
-                    <button type="button" id="eventSubmit" class="waves-effect waves-light btn  red darken-3"> add
-                      event</button>
-        
+                    <button type="button" id="eventSubmit" style="display: block; margin: 0 auto" class="btn waves-effect light-blue"> ADD EVENT TO CALENDER
+                    </button>        
                   </div>
                 </form>
+              </div> 
+           
+          </div>          
+          <div class="card-footer text-muted">
+            <p class="header center orange-text"  style="font-size: 20px;">You can view your Events in Google Calender</p>
+          </div>
+        </div>
+      </div>
+       
         
-              </div>
-              <div class="footer-copyright  center   grey lighten-3 " style="padding: 4px;">
-                <p> ADDING EVENTS MADE EASY WITH GOOGLE </p>
-              </div>
-            </div>
-            </div>
-            </div>
+                
         
-            </div>
+              
         
-          </body>
-      
+            
+        
+      </body>      
     </main>
-
 </body>
-
 </html>
 
 <script type="text/javascript">
