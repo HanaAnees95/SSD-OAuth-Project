@@ -25,6 +25,16 @@ http://localhost:4000
 
 https://www.youtube.com/watch?v=BZwzWgLA0JA - (O)Auth Passport.js
 
+https://www.youtube.com/watch?v=Q0a0594tOrc
+
+https://www.youtube.com/watch?v=7kHqE2xh-xQ
+
+https://www.youtube.com/watch?v=t4-416mg6iU
+
+https://www.youtube.com/watch?v=3pZ3Nh8tgTE
+
+https://www.youtube.com/watch?v=soGRyl9ztjI
+
 
 ## Authors
 
