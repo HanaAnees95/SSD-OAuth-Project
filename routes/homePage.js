@@ -36,14 +36,10 @@ router.get('/mainPage', function (req, res) {
     }
 })
 
-router.post('/upload', function (req, res) {
-
-    // not auth
+router.post('/upload', function (req, res) {   
     if (!req.user) res.redirect('/auth/login/google')
     else {
-        // auth user
-
-        // config google drive with client token
+        
         const oauth2Client = new google.auth.OAuth2()
         oauth2Client.setCredentials({
             'access_token': req.user.accessToken
@@ -53,9 +49,7 @@ router.post('/upload', function (req, res) {
             version: 'v3',
             auth: oauth2Client
         });
-
-        //move file to google drive
-
+        
         let { name: filename, mimetype, data } = req.files.file_upload
 
         const driveResponse = drive.files.create({
@@ -71,8 +65,8 @@ router.post('/upload', function (req, res) {
 
         driveResponse.then(data => {
 
-            if (data.status == 200) res.redirect('/mainPage?file=upload') // success
-            else res.redirect('/mainPage?file=notupload') // unsuccess
+            if (data.status == 200) res.redirect('/mainPage?file=upload') 
+            else res.redirect('/mainPage?file=notupload') 
 
         }).catch(err => { throw new Error(err) })
     }
