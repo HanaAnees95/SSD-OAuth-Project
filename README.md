@@ -8,12 +8,6 @@ npm install
 
 npm start
 
-## References
-
-https://developers.google.com/calendar/api/guides/overview
-
-https://medium.com/@jackrobertscott/how-to-use-google-auth-api-with-node-js-888304f7e3a0
-
 ## URL
 
 http://localhost:4000
@@ -34,6 +28,10 @@ https://www.youtube.com/watch?v=t4-416mg6iU
 https://www.youtube.com/watch?v=3pZ3Nh8tgTE
 
 https://www.youtube.com/watch?v=soGRyl9ztjI
+
+https://developers.google.com/calendar/api/guides/overview
+
+https://medium.com/@jackrobertscott/how-to-use-google-auth-api-with-node-js-888304f7e3a0
 
 
 ## Authors
