@@ -2,7 +2,7 @@
 
 This Node.js Express server application demonstrate OAuth2 process to access user's Google Drive.
 
-## Run th eProject
+## Run the Project
 
 npm install
 
